@@ -39,8 +39,7 @@ class SpringHateoasExcludeEmptyArrayApplicationTests {
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.username").value("alice"))
-                .andExpect(jsonPath("$.links").isArray())
-                .andExpect(jsonPath("$.links").isEmpty())
+                .andExpect(jsonPath("$.links").doesNotExist())
                 .andDo(print());
     }
 
